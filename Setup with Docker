@@ -3,3 +3,8 @@ PREREQUISITES
 Complete all steps from Setup with Docker
 https://docs.docker.com/engine/install/ubuntu/
 
+JQ command line tool (apt-get install jq on Ubuntu, brew install jq on Mac OS)
+
+JOINING THE AXELAR TESTNET
+Clone the repository to use the scripts and configs:
+
