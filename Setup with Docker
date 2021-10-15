@@ -7,6 +7,23 @@ JQ command line tool (apt-get install jq on Ubuntu, brew install jq on Mac OS)
 
 JOINING THE AXELAR TESTNET
 Clone the repository to use the scripts and configs
+
 git clone https://github.com/axelarnetwork/axelarate-community.git
 cd axelarate-community
+
+Checkout the correct tag so the scripts work with the deployment.
+git checkout <release-tag>
+
+Run the script 
+join/joinTestnet.sh
+
+You can get the latest version and save it to variables:
+CORE_VERSION=$(curl -s https://raw.githubusercontent.com/axelarnetwork/axelarate-community/main/documentation/docs/testnet-releases.md  | grep axelar-core | cut -d \` -f 4)
+echo ${CORE_VERSION}
+
+Wait for your node to catch up with the network before proceeding. Use docker logs -f axelar-core to keep an eye on the node's progress (this can take a while).
+You can check the sync status by running:
+
+curl localhost:26657/status | jq '.result.sync_info'
+Wait for catching_up to become false
 
